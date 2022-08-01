@@ -8,7 +8,7 @@ jobs:
       run:
         shell: msys2 {0}
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v3
       - name: Setup MSYS2
         uses: msys2/setup-msys2@v2
@@ -16,13 +16,17 @@ jobs:
           msystem: MINGW64
           update: true
           install: git autotools mingw-w64-x86_64-meson gcc gettext-devel glib2-devel mingw-w64-x86_64-gobject-introspection
-      - name: Install Bubblewrap
+      - name: Install missing dependencies
         run: |
+          # download missing headers
+          wget -O /usr/include/sys/prctl.h https://github.com/torvalds/linux/raw/master/include/uapi/linux/prctl.h
+          # install libcap
           git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git
           cd libcap
           make
           make install
           cd ..
+          # install boubblewrap
           git clone https://github.com/containers/bubblewrap
           cd bubblewrap
           meson _build
