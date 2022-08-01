@@ -13,7 +13,7 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: autotools
+          install: git autotools
       - uses: actions/checkout@v3
         with:
           repository: flatpak/flatpak
