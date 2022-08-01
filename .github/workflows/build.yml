@@ -13,7 +13,7 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: git autotools
+          install: git autotools gettext
       - uses: actions/checkout@v3
         with:
           repository: flatpak/flatpak
