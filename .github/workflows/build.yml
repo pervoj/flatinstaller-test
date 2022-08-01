@@ -14,6 +14,9 @@ jobs:
           msystem: MINGW64
           update: true
           install: git mingw-w64-x86_64-cc
+      - uses: actions/checkout@v3
+        with:
+          repository: flatpak/flatpak
       - name: CI-Build
         run: |
           git clone https://github.com/flatpak/flatpak
