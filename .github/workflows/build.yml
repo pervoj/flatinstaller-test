@@ -18,7 +18,7 @@ jobs:
           install: git autotools meson gcc gettext-devel glib2-devel mingw-w64-x86_64-gobject-introspection
       - name: Install Bubblewrap
         run: |
-          https://github.com/containers/bubblewrap
+          git clone https://github.com/containers/bubblewrap
           cd bubblewrap
           meson _build
           meson compile -C _build
