@@ -19,8 +19,6 @@ jobs:
           repository: flatpak/flatpak
       - name: CI-Build
         run: |
-          git clone https://github.com/flatpak/flatpak
-          cd flatpak
           NOCONFIGURE=1 ./autogen.sh
           ./configure --prefix=/usr --sysconfdir=/etc --libdir=/usr/lib64 --localstatedir=/var --enable-docbook-docs --enable-installed-tests --enable-selinux-module --with-system-bubblewrap --with-system-dbus-proxy
           make -j$(nproc)
