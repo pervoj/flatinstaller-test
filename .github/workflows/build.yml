@@ -8,16 +8,19 @@ jobs:
       run:
         shell: msys2 {0}
     steps:
-      - uses: actions/checkout@v3
-      - uses: msys2/setup-msys2@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Checkout Flatpak
+        uses: actions/checkout@v3
+        with:
+          repository: flatpak/flatpak
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
           update: true
-          install: git autotools gettext
-      - uses: actions/checkout@v3
-        with:
-          repository: flatpak/flatpak
-      - name: CI-Build
+          install: git autotools gettext-devel
+      - name: Build Flatpak
         run: |
           NOCONFIGURE=1 ./autogen.sh
           ./configure --prefix=/usr --sysconfdir=/etc --libdir=/usr/lib64 --localstatedir=/var --enable-docbook-docs --enable-installed-tests --enable-selinux-module --with-system-bubblewrap --with-system-dbus-proxy
