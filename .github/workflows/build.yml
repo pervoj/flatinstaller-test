@@ -19,6 +19,7 @@ jobs:
       - name: Install missing dependencies
         run: |
           # download missing headers
+          mkdir /usr/include/linux
           wget -O /usr/include/sys/prctl.h https://github.com/torvalds/linux/raw/master/include/uapi/linux/prctl.h
           wget -O /usr/include/linux/types.h https://github.com/torvalds/linux/raw/master/include/linux/types.h
           # install libcap
