@@ -1,5 +1,5 @@
-- linux/compiler-clang.h
-- linux/compiler-intel.h
-- linux/compiler-gcc.h
-- asm/types.h
-- asm/posix_types.h
+- [x] linux/compiler-clang.h
+- [x] linux/compiler-intel.h
+- [x] linux/compiler-gcc.h
+- [ ] asm/types.h
+- [ ] asm/posix_types.h

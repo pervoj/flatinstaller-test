@@ -29,6 +29,9 @@ jobs:
           wget -O /usr/include/linux/stddef.h https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/stddef.h
           wget -O /usr/include/linux/compiler_types.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler_types.h
           wget -O /usr/include/linux/compiler_attributes.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler_attributes.h
+          wget -O /usr/include/linux/compiler-clang.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler-clang.h
+          wget -O /usr/include/linux/compiler-gcc.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler-gcc.h
+          wget -O /usr/include/linux/compiler-intel.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler-intel.h
 
           # install libcap
           git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git
