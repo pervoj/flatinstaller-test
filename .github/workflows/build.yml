@@ -26,8 +26,10 @@ jobs:
           wget -O /usr/include/linux/types.h https://github.com/torvalds/linux/raw/master/include/linux/types.h
           wget -O /usr/include/uapi/linux/types.h https://github.com/torvalds/linux/raw/master/include/uapi/linux/types.h
           wget -O /usr/include/linux/posix_types.h https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/posix_types.h
-          wget -O /usr/include/uapi/linux/stddef.h https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/stddef.h
-          
+          wget -O /usr/include/linux/stddef.h https://raw.githubusercontent.com/torvalds/linux/master/include/uapi/linux/stddef.h
+          wget -O /usr/include/linux/compiler_types.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler_types.h
+          wget -O /usr/include/linux/compiler_attributes.h https://raw.githubusercontent.com/torvalds/linux/master/include/linux/compiler_attributes.h
+
           # install libcap
           git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git
           cd libcap
