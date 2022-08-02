@@ -24,7 +24,7 @@ jobs:
           mkdir /usr/include/uapi/linux/
           wget -O /usr/include/sys/prctl.h https://github.com/torvalds/linux/raw/master/include/uapi/linux/prctl.h
           wget -O /usr/include/linux/types.h https://github.com/torvalds/linux/raw/master/include/linux/types.h
-          wget -O /uapi/linux/types.h https://github.com/torvalds/linux/raw/master/include/uapi/linux/types.h
+          wget -O /usr/include/linux/uapi/linux/types.h https://github.com/torvalds/linux/raw/master/include/uapi/linux/types.h
           # install libcap
           git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git
           cd libcap
